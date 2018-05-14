@@ -1,0 +1,180 @@
+h1, h2, h3, h4 {
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+  margin-bottom: 0px;
+  text-align: left;
+  color: black;
+}
+p {
+  font-family: 'Roboto', sans-serif;
+}
+/* Navigation Top - Top*/
+nav >ul >li>a {
+font-size: 130%;
+color: white;
+border-style:solid;
+border-color: rgb(50, 100, 190);
+}
+nav >ul >li>a:link {
+  color:white;
+  background-color: rgb(100, 135, 200);
+  background: linear-gradient(rgb(100, 135, 200), rgb(50, 100, 190));
+}
+nav >ul >li>a:hover {
+  color:yellow;
+  background: rgb(100, 135, 200);
+}
+nav >ul >li>a:active {
+  color:red;
+  background-color: hsla(121, 0%, 63%, 1);}
+/* Navigation Top - end*/
+/* Head and Poem Controls - All Pages */
+.grid-container{
+  margin-top: 40px;
+}
+.fadeIn {
+  opacity: 0;                              /*h1 opacity set to 0*/
+  animation: fadeIn 2s forwards;           /*h1 fade fade in duration */
+  animation-delay: 1s;                     /*h1 slide in delay */
+}
+.w3-animate-left1{                        /*p opacity set to 0*/
+  opacity: 0.4;
+  transform: translate(-1000px);          /*p set to off screen */
+  animation: slide-left 3s ;              /*p slide in duration */
+  animation-fill-mode: forwards;          /*p moves forward */
+  animation-delay: 2s;                    /*p slide in delay */
+}
+.w3-animate-left2{
+  opacity: 0.4;                           /*p opacity set to 0*/
+  transform: translate(-1000px);          /*p set to off screen */
+  animation: slide-left 3s ;              /*p slide in duration */
+  animation-fill-mode: forwards;          /*p moves forward */
+  animation-delay: 4s;                    /*h1 slide in delay */
+}
+/* Head and Poem Controls - End */
+/* Sprite Image Controls Page 1 */
+.sprite {
+height: 400px;                                   /*size of sprite image */
+width: 400px;
+background-image: url('../img/sprite1.jpg');     /*sprite image*/
+animation: play 1.6s steps(51) infinite;         /*play speed, # of images, play style*/
+  }
+/* Sprite Image Controls - End */
+/* Tear Drop Controls Page 2*/
+.tear{
+width: 200px;                                    /*size of tear image*/
+height: 200px;
+background-image: url('../img/tear.png');        /*tear image*/
+position: relative;                              /*The element is positioned relative to its normal position,*/
+animation: tearfall 3s infinite;                 /*tear speed duration, play style*/
+animation-delay: 5s;                             /*delay animation*/
+}
+/* Tear Dropt Controls - End */
+/* Mask Controls Page 3*/
+.maskcontainer{
+position: relative;                             /*The element is positioned relative to its normal position,*/
+width: 400px;                                   /*size of container */
+height: 400px;
+}
+.mask{
+position: absolute;                             /*The element is positioned relative to its first positioned ancestor element*/
+width: 100%;                                    /*size*/
+height: 100%;
+transform-style: preserve-3d;                   /*enables flip*/
+transition: all 0.5s;                           /*how long flip takes*/
+background: yellow;
+}
+.mask:hover{
+  transform: rotateY(180deg);                   /*How far to rotate*/
+}
+.maskfront{
+  position: absolute;                            /*The element is positioned relative to its first positioned ancestor element*/
+  width: 100%;                                   /*size*/
+  height: 100%;
+  backface-visibility:hidden;                    /*background backside is not visible*/
+  background: orange;
+  background-image: url('../img/face1.png');     /*happy face for front card*/
+}
+.maskbehind{
+  position: absolute;                           /*The element is positioned relative to its first positioned ancestor element*/
+  width: 100%;                                  /*size*/
+  height: 100%;
+  backface-visibility:hidden;                   /*background backside is not visible*/
+  background: grey;                             /**/
+  background-image: url('../img/face2.png');    /*sad face for back card*/
+  transform: rotateY(180deg);                   /*how far to rotate*/
+}
+/* Mask Contorls - End */
+.heartcontainer{
+position: relative;                            /*The element is positioned relative to its normal position*/
+width: 400px;                                  /*size*/
+height: 400px;
+}
+.heart1{
+  width: 400px;                                /*size*/
+  height: 400px;
+  background-image: url('../img/heart1.png');  /*red heart image*/
+  position: absolute;                          /*The element is positioned relative to its first positioned ancestor element*/
+  animation: heart1 1s infinite;               /*image duration, play style*/
+  animation-delay: 1s;                         /*delay animation*/
+}
+.heart2{
+  width: 400px;                                /*size*/
+  height: 400px;
+  background-image: url('../img/heart2.png');  /*blac heart image*/
+  position: absolute;                          /*The element is positioned relative to its first positioned ancestor element*/
+  animation: heart2 1s infinite;               /*image duration, play style*/
+  animation-delay: 1s;                         /*delay animation*/
+}
+/* Head and Poem Controls - All Pages*/
+@keyframes fadeIn{
+    0%{opacity:0.0;}                           /*opacity set to 0%*/
+    100%{opacity:1;}                           /*opacity set to 100%*/
+  }
+@keyframes slide-left{
+  0{transform: translate(-1000px);             /*words set off screen*/
+  opacity: 0.0;}                               /*opacity set to 0%*/
+  50%{opacity:0.3; }                           /*opacity increase*/
+  /* 80%{opacity: 0.6;}
+  83%{opacity: 0.7;}
+  87%{opacity: 0.8;
+  90%{opacity: 0.9;}
+  95%{opacity: 1;} */
+  100%{transform: translate(0);               /*words enter screen from left*/
+      opacity: 1;}                            /*opacity set to 100%*/
+}
+/* Head and Poem Controls - End*/
+/* Sprite Image Controls Page 1 */
+@keyframes play{
+  from{background-position: 0;                /*start position of sprite image*/
+  }
+ to{background-position: -20400px;}           /*end position of sprite image (Total of sprite image pixels) */
+  }
+  /* Sprite Image Controls Page 1 - End*/
+  /* Tear Controls Page 2*/
+@keyframes tearfall {
+  from {top: 0px;}                           /*original position of tear image*/
+  to {top: 400px;}                           /*end position of tear image*/
+
+  0%{opacity:1;}                             /*opacity set to 100%*/
+  100%{opacity:0.0;}                         /*opacity set to 0%*/
+
+  0% {transform: scale(1.0);}                /*original tear image scale size*/
+  100%{transform: scale(2.0);}               /*tear image scale size increased*/
+  }
+/* Tear Controls - End*/
+@keyframes heart1 {                         /*red heart image*/
+  0% {transform: scale(1.0);}               /*beginning of scale set to original size*/
+  50% {transform: scale(1.1);}              /*middle of scale increased in size*/
+  100%{transform: scale(1.0);}              /*end of scale set to original size*/
+  0%{opacity:1;}                            /*beginning of opacity set to 100%*/
+  50%{opacity:0.0;}                         /*middle of opacity set to 50%*/
+  100%{opacity:1;}                          /*end of opacity set to 100%*/
+
+  }
+  @keyframes heart2 {                      /*black heart image*/
+  0% {transform: scale(1.0);}              /*beginning of scale set to original size*/
+  50% {transform: scale(1.1);}             /*middle of scale increased in size*/
+  100%{transform: scale(1.0);}             /*end of scale set to original size*/
+  }
