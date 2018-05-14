@@ -83,7 +83,7 @@ width: 100%;                                    /*size*/
 height: 100%;
 transform-style: preserve-3d;                   /*enables flip*/
 transition: all 0.5s;                           /*how long flip takes*/
-background: yellow;
+
 }
 .mask:hover{
   transform: rotateY(180deg);                   /*How far to rotate*/
